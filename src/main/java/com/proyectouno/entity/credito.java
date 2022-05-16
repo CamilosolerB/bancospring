@@ -1,16 +1,24 @@
 package com.proyectouno.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="credito")
 public class credito {
+    @Id
     private String codigo;
+    @Column(name = "documento",nullable = false,length = 255)
     private String documento;
+    @Column(name = "codlinea",nullable = false,length = 255)
     private String codlinea;
+    @Column(name = "monto",nullable = false,length = 255)
     private int  monto;
+    @Column(name = "fecha",nullable = false,length = 255)
     private String fecha;
+    @Column(name = "usuario",nullable = false,length = 255)
     private int plazo;
 
     public credito(String codigo, String documento, String codlinea, int monto, String fecha, int plazo) {

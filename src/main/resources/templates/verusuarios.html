@@ -50,23 +50,20 @@
         <tr>
             <th scope="col">Documento</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Celular</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Fecha de nacimiento</th>
-            <th scope="col">Opciones</th>
+            <th scope="col">Clave</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Imagen</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="i:${Nombre}">
-            <td th:text="${i.documento}">Documento</td>
-            <td th:text="${i.nombre}">Nombre</td>
-            <td th:text="${i.apellido}">Apellido</td>
-            <td th:text="${i.correo}">Email</td>
-            <td th:text="${i.celular}">Celular</td>
-            <td th:text="${i.sexo}">Sexo</td>
-            <td th:text="${i.fecnac}">Fecha de nacimiento</td>
+            <td th:text="${i.documentousu}">Documento</td>
+            <td th:text="${i.usuario}">Nombre</td>
+            <td th:text="${i.clave}">Apellido</td>
+            <td th:text="${i.rol}">Email</td>
+            <td th:text="${i.estado}">Celular</td>
+            <td th:text="${i.imagen}">Celular</td>
         </tr>
         </tbody>
     </table>

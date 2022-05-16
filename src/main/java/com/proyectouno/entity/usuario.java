@@ -1,9 +1,6 @@
 package com.proyectouno.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="usuario")
@@ -15,10 +12,17 @@ public class usuario {
     private String usuario;
     @Column(name = "clave",nullable = false,length = 255)
     private String clave;
-    @Column(name = "rol")
+    @Column(name = "rol",nullable = false,length = 255)
     private String rol;
+    @Column(name = "estado",nullable = false,length = 255)
     private String estado;
+    @Column(name = "imagen",nullable = false,length = 255)
     private String imagen;
+
+    @ManyToOne
+    @JoinColumn(name = "documento_us")
+    private  cliente cliente;
+
 
     public usuario(String documentousu, String usuario, String clave, String rol, String estado, String imagen) {
         this.documentousu = documentousu;

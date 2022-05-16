@@ -18,14 +18,14 @@ public class ControllerCliente {
 	@GetMapping("cliente")
 	public String listarcliente(Model modelo){
 		modelo.addAttribute("Nombre",servicio.clienteresp());
-		return ("clientes");
+		return ("insertarcliente");
 	}
 
 	@GetMapping("/cliente/nuevo")
 
 	public  String registrarcliente(Model modelo){
 		modelo.addAttribute("clienteinsertar", new cliente());
-		return "insertarcliente";
+		return "clientes";
 	}
 
 	@Autowired
@@ -35,6 +35,6 @@ public class ControllerCliente {
 
 	public String registrardatoscliente(cliente client){
 		cliente clienteguardar=repository.save((new cliente(client.getDocumento(),client.getNombre(),client.getApellido(),client.getCorreo(),client.getCelular(),client.getSexo(),client.getFecnac())));
-		return "redirect:/cliente";
+		return "redirect:/cliente/nuevo";
 	}
 }
